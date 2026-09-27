@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Minhazul Islam Rikat — Portfolio
 
-## Getting Started
+My personal portfolio website showcasing my experience, selected projects, technical skills, and approach to building modern web experiences.
 
-First, run the development server:
+Built with a focus on clean design, responsive interfaces, reusable components, and a strong frontend development foundation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌐 Live Website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[https://minhazul-islam-rikat.vercel.app/](https://minhazul-islam-rikat.vercel.app/)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 👨‍💻 About
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+I'm **Minhazul Islam Rikat**, a **Frontend & CMS Developer** focused on building modern, responsive, and functional web experiences.
 
-## Learn More
+I enjoy turning ideas and designs into polished interfaces while continuously improving my frontend development and software engineering skills.
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Modern dark-themed portfolio design
+- Responsive layout for desktop, tablet, and mobile
+- Selected projects showcase
+- Experience & education timeline
+- Technical skills section
+- Development process section
+- Contact section
+- Responsive navigation
+- Project data managed through reusable data structures
+- Subtle interactions and animations
+- Dark/light theme support planned
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+### Frontend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- JavaScript
+- React
+- Next.js
+- Tailwind CSS
+- daisyUI
+- HTML
+- CSS
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Tools
+
+- Git
+- GitHub
+- Figma
+
+### CMS
+
+- Shopify
+- Framer
+- WordPress
+
+## 📁 Project Structure
+
+```text
+app/
+├── components/
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── SelectedWork.jsx
+│   ├── ProjectCard.jsx
+│   ├── Experience.jsx
+│   ├── About.jsx
+│   ├── Skills.jsx
+│   ├── Process.jsx
+│   ├── Contact.jsx
+│   └── Footer.jsx
+│
+├── data/
+│   ├── projects.js
+│   └── experiences.js
+│
+├── globals.css
+├── layout.js
+└── page.js
+
+public/
+└── projects/
+    ├── keenkeeper.png
+    ├── book-vibe.png
+    └── digi-tools.png
