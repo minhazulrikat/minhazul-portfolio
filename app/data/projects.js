@@ -5,7 +5,7 @@ const projects = [
     description:
       "A modern web application focused on delivering a clean, responsive and user-friendly experience.",
     technologies: ["React", "Next.js", "Tailwind CSS"],
-    image: "/projects/keenkeeper.png",
+    image: "/projects/keenkeeper-preview.png",
     liveUrl: "https://keen-keeper-beige.vercel.app/",
     githubUrl: "https://github.com/minhazulrikat/keen-keeper.git",
   },
@@ -16,18 +16,18 @@ const projects = [
       "A responsive book discovery and reading experience with filtering, sorting and reading statistics.",
     technologies: ["React", "React Router", "Tailwind CSS", "Recharts"],
     image: "/projects/book-vibe.png",
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://books-vibe-eight.vercel.app/",
+    githubUrl: "https://github.com/minhazulrikat/books-vibe.git",
   },
   {
     id: 3,
-    title: "GitHub Issues Tracker",
+    title: "DigiTools",
     description:
-      "An interactive issue management interface with filtering, search and dynamic issue status handling.",
-    technologies: ["JavaScript", "Tailwind CSS", "REST API"],
-    image: "/projects/issues-tracker.png",
-    liveUrl: "#",
-    githubUrl: "#",
+      "A modern digital products platform designed to showcase AI-powered tools, design assets, templates, and productivity software through a responsive and engaging interface.",
+    technologies: ["React", "JavaScript", "Tailwind CSS"],
+    image: "/projects/digi-tools.png",
+    liveUrl: "https://digi-tools-vert.vercel.app/",
+    githubUrl: "https://github.com/minhazulrikat/DigiTools.git",
   },
 ];
 

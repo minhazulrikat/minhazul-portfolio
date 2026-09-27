@@ -4,10 +4,6 @@ import { useEffect, useRef, useState } from "react";
 
 const ROLES = ["Frontend Developer", "React Engineer", "CMS Specialist", "UI Craftsman"];
 
-/**
- * Typewriter hook — types out each word in `words`, pauses, deletes, moves to next.
- * Respects prefers-reduced-motion by just showing the first word statically.
- */
 function useTypewriter(words, { typeSpeed = 65, deleteSpeed = 35, pause = 1400 } = {}) {
   const [text, setText] = useState("");
 
@@ -53,7 +49,7 @@ function useTypewriter(words, { typeSpeed = 65, deleteSpeed = 35, pause = 1400 }
   return { text };
 }
 
-/** Subtle cursor-follow tilt for the code window. Disabled on touch / reduced motion. */
+
 function useTilt(ref) {
   useEffect(() => {
     const el = ref.current;

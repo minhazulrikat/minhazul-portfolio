@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ProjectCard({ project, reverse = false }) {
   return (
     <article className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
@@ -7,13 +9,15 @@ export default function ProjectCard({ project, reverse = false }) {
           reverse ? "lg:col-start-6" : "lg:col-start-1"
         }`}
       >
-        <div className="aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface)]">
-          <div className="flex h-full items-center justify-center p-8">
-            <span className="font-mono text-sm text-[var(--text-muted)]">
-              {project.title} Preview
-            </span>
-          </div>
-        </div>
+        <div className="group relative aspect-[16/10] overflow-hidden border border-[var(--border)] bg-[var(--surface)]">
+  <Image
+    src={project.image}
+    alt={`${project.title} website preview`}
+    fill
+    className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+    sizes="(max-width: 1024px) 100vw, 60vw"
+  />
+</div>
       </div>
 
       {/* Project Information */}

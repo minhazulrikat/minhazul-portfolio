@@ -1,23 +1,23 @@
 const contactLinks = [
   {
     label: "Email",
-    value: "your@email.com",
-    href: "mailto:your@email.com",
+    value: "minhazulrikat@gmail.com",
+    href: "mailto:minhazulrikat@gmail.com",
   },
   {
     label: "GitHub",
     value: "GitHub",
-    href: "#",
+    href: "https://github.com/minhazulrikat",
   },
   {
     label: "LinkedIn",
     value: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/in/minhazul-rikat/",
   },
   {
-    label: "Fiverr",
-    value: "Fiverr",
-    href: "#",
+    label: "Facebook",
+    value: "Facebook",
+    href: "https://www.facebook.com/MinhazulRikat/",
   },
 ];
 
