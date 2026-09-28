@@ -1,15 +1,15 @@
 const footerLinks = [
   {
     label: "GitHub",
-    href: "#",
+    href: "https://github.com/minhazulrikat",
   },
   {
     label: "LinkedIn",
-    href: "#",
+    href: "linkedin.com/in/minhazul-rikat",
   },
   {
-    label: "Fiverr",
-    href: "#",
+    label: "Facebook",
+    href: "https://www.facebook.com/MinhazulRikat/",
   },
 ];
 

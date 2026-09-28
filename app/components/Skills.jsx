@@ -16,7 +16,7 @@ const skillGroups = [
     skills: [
       "Wix",
       "Framer",
-      "Squrespace",
+      "Squarespace",
     ],
   },
   {
