@@ -1,14 +1,25 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "./animations";
 
-const ROLES = ["Frontend Developer", "React Engineer", "CMS Specialist", "UI Craftsman"];
+const ROLES = [
+  "Frontend Developer",
+  "React Engineer",
+  "CMS Specialist",
+  "UI Craftsman",
+];
 
-function useTypewriter(words, { typeSpeed = 65, deleteSpeed = 35, pause = 1400 } = {}) {
+function useTypewriter(
+  words,
+  { typeSpeed = 65, deleteSpeed = 35, pause = 1400 } = {},
+) {
   const [text, setText] = useState("");
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+
     if (mq.matches) {
       setText(words[0]);
       return;
@@ -25,48 +36,58 @@ function useTypewriter(words, { typeSpeed = 65, deleteSpeed = 35, pause = 1400 }
       if (!deleting) {
         charIndex++;
         setText(current.slice(0, charIndex));
+
         if (charIndex === current.length) {
           deleting = true;
           timeoutId = setTimeout(tick, pause);
           return;
         }
+
         timeoutId = setTimeout(tick, typeSpeed);
       } else {
         charIndex--;
         setText(current.slice(0, charIndex));
+
         if (charIndex === 0) {
           deleting = false;
           wordIndex = (wordIndex + 1) % words.length;
         }
+
         timeoutId = setTimeout(tick, deleteSpeed);
       }
     };
 
     timeoutId = setTimeout(tick, typeSpeed);
+
     return () => clearTimeout(timeoutId);
   }, [words, typeSpeed, deleteSpeed, pause]);
 
   return { text };
 }
 
-
 function useTilt(ref) {
   useEffect(() => {
     const el = ref.current;
+
     if (!el) return;
+
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const isTouch = window.matchMedia("(pointer: coarse)").matches;
+
     if (mq.matches || isTouch) return;
 
     const onMove = (e) => {
       const rect = el.getBoundingClientRect();
+
       const px = (e.clientX - rect.left) / rect.width - 0.5;
       const py = (e.clientY - rect.top) / rect.height - 0.5;
+
       el.style.setProperty("--tilt-x", `${py * -4}deg`);
       el.style.setProperty("--tilt-y", `${px * 6}deg`);
       el.style.setProperty("--glow-x", `${(px + 0.5) * 100}%`);
       el.style.setProperty("--glow-y", `${(py + 0.5) * 100}%`);
     };
+
     const onLeave = () => {
       el.style.setProperty("--tilt-x", "0deg");
       el.style.setProperty("--tilt-y", "0deg");
@@ -74,6 +95,7 @@ function useTilt(ref) {
 
     el.addEventListener("mousemove", onMove);
     el.addEventListener("mouseleave", onLeave);
+
     return () => {
       el.removeEventListener("mousemove", onMove);
       el.removeEventListener("mouseleave", onLeave);
@@ -83,7 +105,9 @@ function useTilt(ref) {
 
 export default function Hero() {
   const { text: typedRole } = useTypewriter(ROLES);
+
   const cardRef = useRef(null);
+
   useTilt(cardRef);
 
   return (
@@ -95,8 +119,10 @@ export default function Hero() {
           backgroundImage:
             "linear-gradient(to right, var(--border-subtle) 1px, transparent 1px), linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px)",
           backgroundSize: "56px 56px",
-          maskImage: "radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 90%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 90%)",
+          maskImage:
+            "radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 90%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 90%)",
         }}
       />
 
@@ -108,36 +134,61 @@ export default function Hero() {
 
       <div className="relative mx-auto grid min-h-[calc(100vh-80px)] max-w-[1280px] items-center gap-16 px-5 pb-20 md:px-8 lg:grid-cols-12 lg:px-12">
         {/* Hero Content */}
-        <div className="lg:col-span-7 animate-[fadeUp_0.7s_ease-out_both]">
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-[var(--primary)]">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="lg:col-span-7"
+        >
+          <motion.p
+            variants={fadeUp}
+            className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-[var(--primary)]"
+          >
             Frontend &amp; CMS Development
-          </p>
+          </motion.p>
 
-          <h1 className="font-mono text-5xl font-medium leading-[0.95] tracking-[-0.04em] text-[var(--text-primary)] sm:text-6xl md:text-7xl lg:text-8xl">
+          <motion.h1
+            variants={fadeUp}
+            className="font-mono text-5xl font-medium leading-[0.95] tracking-[-0.04em] text-[var(--text-primary)] sm:text-6xl md:text-7xl lg:text-8xl"
+          >
             MINHAZUL
             <br />
             ISLAM RIKAT
-          </h1>
+          </motion.h1>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--text-secondary)] md:text-xl">
+          <motion.p
+            variants={fadeUp}
+            className="mt-8 max-w-2xl text-lg leading-8 text-[var(--text-secondary)] md:text-xl"
+          >
             I build modern, responsive web experiences that turn ideas and
             designs into functional products.
-          </p>
+          </motion.p>
 
           {/* Typewriter role line */}
-          <p className="mt-5 flex h-5 items-center font-mono text-xs tracking-wide text-[var(--text-muted)]">
+          <motion.p
+            variants={fadeUp}
+            className="mt-5 flex h-5 items-center font-mono text-xs tracking-wide text-[var(--text-muted)]"
+          >
             <span className="text-[var(--primary)]">&gt;</span>
-            <span className="ml-2 text-[var(--text-secondary)] uppercase text-sm tracking-widest ">{typedRole}</span>
+
+            <span className="ml-2 uppercase tracking-wider text-[var(--text-secondary)]">
+              {typedRole}
+            </span>
+
             <span className="ml-0.5 inline-block h-3.5 w-[7px] translate-y-[1px] animate-[blink_1s_step-end_infinite] bg-[var(--primary)]" />
-          </p>
+          </motion.p>
 
           {/* CTA */}
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <motion.div
+            variants={fadeUp}
+            className="mt-10 flex flex-wrap items-center gap-4"
+          >
             <a
               href="#work"
               className="group relative overflow-hidden border border-[var(--primary)] bg-[var(--primary)] px-6 py-3 text-sm font-medium text-white transition-colors"
             >
               <span className="relative z-10">View My Work →</span>
+
               <span className="absolute inset-0 origin-left scale-x-0 bg-[var(--primary-hover)] transition-transform duration-300 group-hover:scale-x-100" />
             </a>
 
@@ -147,16 +198,26 @@ export default function Hero() {
             >
               Contact Me
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Hero Visual */}
-        <div className="lg:col-span-5 animate-[fadeUp_0.7s_ease-out_0.15s_both]">
+        <motion.div
+          initial={{ opacity: 0, x: 25 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.7,
+            delay: 0.2,
+            ease: "easeOut",
+          }}
+          className="lg:col-span-5"
+        >
           <div
             ref={cardRef}
             className="relative border border-[var(--border)] bg-[var(--surface)] transition-transform duration-200 ease-out [transform-style:preserve-3d]"
             style={{
-              transform: "perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))",
+              transform:
+                "perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))",
             }}
           >
             {/* soft light that tracks the cursor */}
@@ -189,58 +250,66 @@ export default function Hero() {
               </p>
 
               <p className="pl-4">
-                name: <span className="text-[var(--text-primary)]">"Minhazul"</span>,
+                name:{" "}
+                <span className="text-[var(--text-primary)]">
+                  "Minhazul"
+                </span>
+                ,
               </p>
 
               <p className="pl-4">
-                role: <span className="text-[var(--text-primary)]">"{typedRole}"</span>
+                role:{" "}
+                <span className="text-[var(--text-primary)]">
+                  "{typedRole}"
+                </span>
                 <span className="ml-0.5 inline-block h-3 w-[6px] translate-y-[1px] animate-[blink_1s_step-end_infinite] bg-[var(--primary)]" />
                 ,
               </p>
 
               <p className="pl-4">
-                focus: <span className="text-[var(--text-primary)]">"Web Experiences"</span>,
+                focus:{" "}
+                <span className="text-[var(--text-primary)]">
+                  "Web Experiences"
+                </span>
+                ,
               </p>
 
               <p className="pl-4">
                 stack: [
-                <span className="text-[var(--text-primary)]">"React", "Next.js"</span>
+                <span className="text-[var(--text-primary)]">
+                  "React", "Next.js"
+                </span>
                 ],
               </p>
 
               <p>{"};"}</p>
 
               <div className="mt-8 border-t border-[var(--border-subtle)] pt-5">
-                <p className="text-[var(--text-muted)]">// turning ideas into products</p>
+                <p className="text-[var(--text-muted)]">
+                  // turning ideas into products
+                </p>
+
                 <p className="mt-2">
                   <span className="text-[var(--primary)]">build</span>
-                  <span className="text-[var(--text-primary)]">(ideas);</span>
+                  <span className="text-[var(--text-primary)]">
+                    (ideas);
+                  </span>
                 </p>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <style jsx>{`
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(14px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
         @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .animate-\\[fadeUp_0\\.7s_ease-out_both\\],
-          .animate-\\[fadeUp_0\\.7s_ease-out_0\\.15s_both\\] {
-            animation: none !important;
+          0%,
+          100% {
+            opacity: 1;
+          }
+
+          50% {
+            opacity: 0;
           }
         }
       `}</style>
