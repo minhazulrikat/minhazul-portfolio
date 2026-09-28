@@ -44,7 +44,7 @@ export default function Contact() {
             </p>
 
             <a
-              href="mailto:your@email.com"
+              href="mailto:minhazulrikat@gmail.com"
               className="mt-10 inline-flex border border-[var(--primary)] bg-[var(--primary)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--primary-hover)]"
             >
               Start a Conversation →
