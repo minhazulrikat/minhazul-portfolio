@@ -127,7 +127,7 @@ export default function Hero() {
           {/* Typewriter role line */}
           <p className="mt-5 flex h-5 items-center font-mono text-xs tracking-wide text-[var(--text-muted)]">
             <span className="text-[var(--primary)]">&gt;</span>
-            <span className="ml-2 text-[var(--text-secondary)]">{typedRole}</span>
+            <span className="ml-2 text-[var(--text-secondary)] uppercase text-sm tracking-widest ">{typedRole}</span>
             <span className="ml-0.5 inline-block h-3.5 w-[7px] translate-y-[1px] animate-[blink_1s_step-end_infinite] bg-[var(--primary)]" />
           </p>
 
