@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "Work", href: "#work" },
@@ -12,11 +12,43 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.querySelector(link.href))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleSections.length > 0) {
+          const activeId = visibleSections[0].target.id;
+
+          setActiveSection(`#${activeId}`);
+        }
+      },
+      {
+        rootMargin: "-25% 0px -55% 0px",
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      },
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full border-b border-[var(--border-subtle)] bg-[var(--background)]/90 backdrop-blur-md">
       <nav className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 md:px-8 lg:px-12">
-        
         {/* Logo / Name */}
         <a
           href="#"
@@ -27,16 +59,29 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
-            >
-              {link.label}
-            </a>
-          ))}
+         {navLinks.map((link) => {
+  const isActive = activeSection === link.href;
 
+  return (
+    <a
+      key={link.label}
+      href={link.href}
+      className={`relative py-2 text-sm transition-colors ${
+        isActive
+          ? "text-[var(--text-primary)]"
+          : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+      }`}
+    >
+      {link.label}
+
+      <span
+        className={`absolute bottom-0 left-0 h-px bg-[var(--primary)] transition-all duration-300 ${
+          isActive ? "w-full" : "w-0"
+        }`}
+      />
+    </a>
+  );
+})}
           <a
             href="#contact"
             className="border border-[var(--primary)] bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--primary-hover)]"
@@ -53,9 +98,7 @@ export default function Navbar() {
           aria-label="Toggle navigation"
           aria-expanded={isOpen}
         >
-          <span className="text-lg">
-            {isOpen ? "×" : "☰"}
-          </span>
+          <span className="text-lg">{isOpen ? "×" : "☰"}</span>
         </button>
       </nav>
 
@@ -63,16 +106,24 @@ export default function Navbar() {
       {isOpen && (
         <div className="border-t border-[var(--border-subtle)] bg-[var(--surface)] md:hidden">
           <div className="mx-auto flex max-w-[1280px] flex-col px-5 py-5">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="border-b border-[var(--border-subtle)] py-4 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
-              >
-                {link.label}
-              </a>
-            ))}
+           {navLinks.map((link) => {
+  const isActive = activeSection === link.href;
+
+  return (
+    <a
+      key={link.label}
+      href={link.href}
+      onClick={() => setIsOpen(false)}
+      className={`block w-full py-4 text-sm transition-colors ${
+        isActive
+          ? "text-[var(--text-primary)]"
+          : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+      }`}
+    >
+      {link.label}
+    </a>
+  );
+})}
 
             <a
               href="#contact"

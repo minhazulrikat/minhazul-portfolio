@@ -7,21 +7,24 @@ import Navbar from "./components/Navbar";
 import Process from "./components/Process";
 import SelectedWork from "./components/SelectedWork";
 import Skills from "./components/Skills";
+import SmoothScroll from "./components/SmoothScroll";
 
 export default function Home() {
   return (
     <>
-      <Navbar/>
-      <main>
-        <Hero/>
-        <SelectedWork/>
-        <Experience/>
-        <About/>
-        <Skills/>
-        <Process/>
-        <Contact/>
-        <Footer/>
-      </main>
+      <SmoothScroll>
+        <Navbar />
+        <main>
+          <Hero />
+          <SelectedWork />
+          <Experience />
+          <About />
+          <Skills />
+          <Process />
+          <Contact />
+          <Footer />
+        </main>
+      </SmoothScroll>
     </>
   );
 }
