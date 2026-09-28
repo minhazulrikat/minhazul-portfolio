@@ -43,7 +43,7 @@ export default function ProjectCard({ project, reverse = false }) {
           {project.technologies.map((technology) => (
             <span
               key={technology}
-              className="border border-[var(--border)] px-3 py-1.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-muted)]"
+              className="border border-[var(--border)] px-3 py-1.5 font-mono text-[10px] uppercase tracking-wide text-[var(--text-secondary)]"
             >
               {technology}
             </span>
