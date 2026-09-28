@@ -1,14 +1,24 @@
+"use client";
+
 import projects from "../data/projects";
 import ProjectCard from "./ProjectCard";
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "./animations";
 
 export default function SelectedWork() {
   return (
-    <section
+    <motion.section
       id="work"
       className="mx-auto max-w-[1280px] scroll-mt-24 px-5 py-24 md:px-8 md:py-32 lg:px-12"
     >
       {/* Section Header */}
-      <div className="mb-20">
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="mb-20"
+      >
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--primary)]">
           02 / Selected Work
         </p>
@@ -21,18 +31,25 @@ export default function SelectedWork() {
           A selection of projects where I turned ideas and designs into
           responsive, functional web experiences.
         </p>
-      </div>
+      </motion.div>
 
       {/* Projects */}
-      <div className="space-y-32 md:space-y-40">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="space-y-32 md:space-y-40"
+      >
         {projects.map((project, index) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            reverse={index % 2 !== 0}
-          />
+          <motion.div key={project.id} variants={fadeUp}>
+            <ProjectCard
+              project={project}
+              reverse={index % 2 !== 0}
+            />
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
