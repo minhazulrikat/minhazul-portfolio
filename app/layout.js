@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Minhazul Islam Rikat",
+  title: "Minhazul Islam",
   description: "Frontend & CMS Developer",
 };
 
