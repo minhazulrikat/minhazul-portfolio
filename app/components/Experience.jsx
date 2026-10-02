@@ -186,7 +186,7 @@ export default function Experience() {
                     {experience.tools.map((tool) => (
                       <span
                         key={tool}
-                        className="border border-[var(--border)] bg-transparent px-3 py-1.5 font-mono text-[11px] text-[var(--text-secondary)] transition-colors duration-200 hover:border-[var(--primary)] hover:text-[var(--primary)]"
+                        className="border border-[var(--border)] bg-transparent px-3 py-1.5 font-mono text-[11px] text-[var(--accent)] transition-colors duration-200 hover:border-[var(--accent)] hover:text-[var(--text-primary)]"
                       >
                         {tool}
                       </span>
