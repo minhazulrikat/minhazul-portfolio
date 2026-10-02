@@ -111,7 +111,7 @@ export default function Hero() {
   useTilt(cardRef);
 
   return (
-    <section className="relative overflow-hidden pt-32">
+    <section id="hero" className="relative overflow-hidden pt-32">
       {/* Texture: subtle grid, faded toward the edges */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.35]"

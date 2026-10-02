@@ -51,7 +51,7 @@ export default function Navbar() {
       <nav className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 md:px-8 lg:px-12">
         {/* Logo / Name */}
         <a
-          href="#"
+          href="#hero"
           className="font-mono text-sm font-medium tracking-tight text-[var(--text-primary)] transition-colors hover:text-[var(--accent)]"
         >
           MINHAZUL ISLAM RIKAT
