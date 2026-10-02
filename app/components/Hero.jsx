@@ -171,7 +171,7 @@ export default function Hero() {
           >
             <span className="text-[var(--primary)]">&gt;</span>
 
-            <span className="ml-2 uppercase tracking-wider text-[var(--text-secondary)]">
+            <span className="ml-2 uppercase tracking-wider text-cyan-500">
               {typedRole}
             </span>
 
