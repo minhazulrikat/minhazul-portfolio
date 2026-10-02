@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Process from "./components/Process";
+import ScrollProgress from "./components/ScrollProgress";
 import SelectedWork from "./components/SelectedWork";
 import Skills from "./components/Skills";
 import SmoothScroll from "./components/SmoothScroll";
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <SmoothScroll>
         <Navbar />
+        <ScrollProgress/>
         <main>
           <Hero />
           <SelectedWork />
