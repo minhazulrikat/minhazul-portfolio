@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { experiences } from "../data/experiences";
-
+import "../globals.css";
 /**
  * Fires `true` once when the element enters the viewport, then stops observing.
  * Returns `true` immediately (no animation) if the user prefers reduced motion.
@@ -55,11 +55,11 @@ export default function Experience() {
       <div className="grid gap-8 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--primary)]">
-            03 / Experience
+            03 / Experience & Education
           </p>
 
           <h2 className="mt-4 text-4xl font-medium tracking-tight text-[var(--text-primary)] md:text-6xl">
-            Experience
+            Experience 
           </h2>
         </div>
 
@@ -91,7 +91,7 @@ export default function Experience() {
           }}
         />
 
-        <ol className="list-none">
+        <ol className="list-none pl-0 m-0">
           {experiences.map((experience, index) => {
             const dotDelay = reducedMotion ? 0 : 0.3 + index * 0.45;
             const contentDelay = dotDelay + 0.15;
@@ -112,8 +112,9 @@ export default function Experience() {
               >
                 {/* Dot — the anchor point for this entry */}
                 <span
+                id="dot"
                   aria-hidden="true"
-                  className="absolute -left-8 top-1.5 h-2 w-2 -translate-x-1/2 rounded-full bg-[var(--primary)] md:-left-16"
+                  className="absolute md:-left-15 top-[3px] h-2 w-2 -translate-x-1/2 rounded-full bg-[var(--primary)] -left-7 "
                   style={{
                     opacity: inView ? 1 : 0,
                     transform: inView

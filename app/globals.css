@@ -31,3 +31,8 @@ body {
   background: var(--background);
   color: var(--text-primary);
 }
+/* #dot{
+  position: absolute;
+  left: -60px ;
+  top:3;
+} */
