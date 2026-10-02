@@ -7,7 +7,7 @@ export default function About() {
       <div className="grid gap-12 border-t border-[var(--border)] pt-12 lg:grid-cols-12 lg:gap-16">
         {/* Section Label */}
         <div className="lg:col-span-4">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--primary)]">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
             04 / About
           </p>
 

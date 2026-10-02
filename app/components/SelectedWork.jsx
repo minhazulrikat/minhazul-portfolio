@@ -19,7 +19,7 @@ export default function SelectedWork() {
         viewport={{ once: true, amount: 0.2 }}
         className="mb-20"
       >
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--primary)]">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
           02 / Selected Work
         </p>
 

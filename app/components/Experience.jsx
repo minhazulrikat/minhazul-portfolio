@@ -54,7 +54,7 @@ export default function Experience() {
       {/* Section Header */}
       <div className="grid gap-8 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--primary)]">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
             03 / Experience & Education
           </p>
 
@@ -76,13 +76,13 @@ export default function Experience() {
         {/* Base line — always visible, works even if JS/animation is off. Muted so the dots stay the strongest accent. */}
         <div
           aria-hidden="true"
-          className="absolute left-0 top-2 bottom-2 w-px bg-[var(--primary)] opacity-[0.18]"
+          className="absolute left-0 top-2 bottom-2 w-px bg-[var(--accent)] opacity-[0.18]"
         />
 
         {/* Animated overlay line — draws downward once, on entering viewport, at full strength */}
         <div
           aria-hidden="true"
-          className="absolute left-0 top-2 bottom-2 w-px origin-top bg-[var(--primary)]"
+          className="absolute left-0 top-2 bottom-2 w-px origin-top bg-[var(--accent)]"
           style={{
             transform: inView ? "scaleY(1)" : "scaleY(0)",
             transition: reducedMotion
@@ -114,7 +114,7 @@ export default function Experience() {
                 <span
                 id="dot"
                   aria-hidden="true"
-                  className="absolute md:-left-15 top-[3px] h-2 w-2 -translate-x-1/2 rounded-full bg-[var(--primary)] -left-7 "
+                  className="absolute md:-left-15 top-[3px] h-2 w-2 -translate-x-1/2 rounded-full bg-[var(--accent)] -left-7 "
                   style={{
                     opacity: inView ? 1 : 0,
                     transform: inView
@@ -156,7 +156,7 @@ export default function Experience() {
                   </h3>
 
                   <p
-                    className="mt-2 font-mono text-xs uppercase tracking-wide text-[var(--primary)]"
+                    className="mt-2 font-mono text-xs uppercase tracking-wide text-[var(--accent)]"
                     style={fadeStyle(contentDelay)}
                   >
                     {experience.company}

@@ -31,7 +31,7 @@ export default function Contact() {
         {/* Header */}
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-8">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--primary)]">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
               07 / Contact
             </p>
 

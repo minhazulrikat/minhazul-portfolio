@@ -26,7 +26,7 @@ export default function ProjectCard({ project, reverse = false }) {
           reverse ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-8"
         }`}
       >
-        <p className="mb-4 font-mono text-xs tracking-[0.2em] text-[var(--primary)]">
+        <p className="mb-4 font-mono text-xs tracking-[0.2em] text-[var(--accent)]">
           PROJECT {String(project.id).padStart(2, "0")}
         </p>
 

@@ -129,7 +129,7 @@ export default function Hero() {
       {/* Ambient glow, sits behind the code window */}
       <div
         className="pointer-events-none absolute right-0 top-1/4 h-[420px] w-[420px] rounded-full opacity-20 blur-[110px]"
-        style={{ background: "var(--primary)" }}
+        style={{ background: "var(--accent)" }}
       />
 
       <div className="relative mx-auto grid min-h-[calc(100vh-80px)] max-w-[1280px] items-center gap-16 px-5 pb-20 md:px-8 lg:grid-cols-12 lg:px-12">
@@ -142,7 +142,7 @@ export default function Hero() {
         >
           <motion.p
             variants={fadeUp}
-            className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-[var(--primary)]"
+            className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]"
           >
             Frontend &amp; CMS Development
           </motion.p>
@@ -171,7 +171,7 @@ export default function Hero() {
           >
             <span className="text-[var(--primary)]">&gt;</span>
 
-            <span className="ml-2 uppercase tracking-wider text-cyan-500">
+            <span className="ml-2 uppercase tracking-wider text-[var(--accent)]">
               {typedRole}
             </span>
 

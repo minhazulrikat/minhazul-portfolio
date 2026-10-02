@@ -34,7 +34,7 @@ export default function Process() {
       {/* Header */}
       <div className="grid gap-8 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--primary)]">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
             06 / Process
           </p>
 
@@ -64,7 +64,7 @@ export default function Process() {
       lg:border-b-0
     `}
           >
-            <p className="font-mono text-xs tracking-[0.15em] text-[var(--primary)]">
+            <p className="font-mono text-xs tracking-[0.15em] text-[var(--accent)]">
               {step.number}
             </p>
 

@@ -52,7 +52,7 @@ export default function Navbar() {
         {/* Logo / Name */}
         <a
           href="#"
-          className="font-mono text-sm font-medium tracking-tight text-[var(--text-primary)] transition-colors hover:text-[var(--primary)]"
+          className="font-mono text-sm font-medium tracking-tight text-[var(--text-primary)] transition-colors hover:text-[var(--accent)]"
         >
           MINHAZUL ISLAM RIKAT
         </a>
@@ -68,14 +68,14 @@ export default function Navbar() {
       href={link.href}
       className={`relative py-2 text-sm transition-colors ${
         isActive
-          ? "text-[var(--text-primary)]"
+          ? "text-[var(--accent)]"
           : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
       }`}
     >
       {link.label}
 
       <span
-        className={`absolute bottom-0 left-0 h-px bg-[var(--primary)] transition-all duration-300 ${
+        className={`absolute bottom-0 left-0 h-px bg-[var(--accent)] transition-all duration-300 ${
           isActive ? "w-full" : "w-0"
         }`}
       />
@@ -116,7 +116,7 @@ export default function Navbar() {
       onClick={() => setIsOpen(false)}
       className={`block w-full py-4 text-sm transition-colors ${
         isActive
-          ? "text-[var(--text-primary)]"
+          ? "text-[var(--accent)]"
           : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
       }`}
     >
