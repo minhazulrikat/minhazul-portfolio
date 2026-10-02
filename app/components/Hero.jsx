@@ -232,9 +232,9 @@ export default function Hero() {
             {/* Window Header */}
             <div className="relative flex h-11 items-center border-b border-[var(--border)] px-4">
               <div className="flex gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-[var(--text-muted)]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[var(--text-muted)]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[var(--text-muted)]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-red-600" />
+                <span className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
+                <span className="h-2.5 w-2.5 rounded-full bg-green-600" />
               </div>
 
               <p className="ml-4 font-mono text-[10px] text-[var(--text-muted)]">
@@ -245,21 +245,21 @@ export default function Hero() {
             {/* Code */}
             <div className="relative p-6 font-mono text-xs leading-7 text-[var(--text-secondary)] sm:p-8 sm:text-sm">
               <p>
-                <span className="text-[var(--primary)]">const</span>{" "}
-                developer = {"{"}
+                <span className="text-purple-500">const</span>{" "}
+               <span className="text-yellow-400"> developer</span> = {"{"}
               </p>
 
-              <p className="pl-4">
-                name:{" "}
-                <span className="text-[var(--text-primary)]">
+              <p className="pl-4 ">
+              <span className="text-cyan-500">  name:</span>{" "}
+                <span className="text-green-400">
                   "Minhazul"
                 </span>
                 ,
               </p>
 
               <p className="pl-4">
-                role:{" "}
-                <span className="text-[var(--text-primary)]">
+              <span className="text-cyan-500">  role:</span>{" "}
+                <span className="text-green-400">
                   "{typedRole}"
                 </span>
                 <span className="ml-0.5 inline-block h-3 w-[6px] translate-y-[1px] animate-[blink_1s_step-end_infinite] bg-[var(--primary)]" />
@@ -267,16 +267,16 @@ export default function Hero() {
               </p>
 
               <p className="pl-4">
-                focus:{" "}
-                <span className="text-[var(--text-primary)]">
+               <span className="text-cyan-500"> focus:</span>{" "}
+                <span className="text-green-400">
                   "Web Experiences"
                 </span>
                 ,
               </p>
 
               <p className="pl-4">
-                stack: [
-                <span className="text-[var(--text-primary)]">
+              <span className="text-cyan-500">  stack:</span> [
+                <span className="text-green-400">
                   "React", "Next.js"
                 </span>
                 ],
@@ -290,9 +290,9 @@ export default function Hero() {
                 </p>
 
                 <p className="mt-2">
-                  <span className="text-[var(--primary)]">build</span>
+                  <span className="text-purple-500">build</span>
                   <span className="text-[var(--text-primary)]">
-                    (ideas);
+                    (<span className="text-amber-400">ideas</span>);
                   </span>
                 </p>
               </div>
