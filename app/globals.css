@@ -1,22 +1,80 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0d0f12;
-  --surface: #13161a;
-  --surface-elevated: #191d22;
+  /*  Global Background */
 
-  --border: #292e35;
-  --border-subtle: #20242a;
+  --background: #0d1117;
+  --surface: #111820;
+  --surface-elevated: #161e27;
+
+  /* Borders */
+
+  --border: #252d37;
+  --border-subtle: #1b222c;
+
+  /* Text */
 
   --text-primary: #f5f7fa;
   --text-secondary: #b4bbc5;
   --text-muted: #737c88;
 
-  --primary: #1683ff;
-  --primary-hover: #3b98ff;
-  --accent: #16efff;
+  /* brand */
 
-  --success: #35d07f;
+  --primary: #38BDF8;
+  --primary-hover: #67cefa;
+
+  --secondary: #a855f7;
+  --tertiary: #4ade80;
+
+  /* CTA / Action */
+
+  --accent: #1683ff;
+  --accent-hover: #3b98ff;
+
+  /*  Status */
+
+  --success: #4ade80;
+
+  /* Code Editor — Andromeda */
+
+  --code-bg: #23262e;
+  --code-text: #d5ced9;
+  --code-comment: #a0a1a7;
+
+  --code-cyan: #00e8c6;
+  --code-orange: #f39c12;
+  --code-yellow: #ffe66d;
+  --code-pink: #ff00aa;
+  --code-hot-pink: #f92672;
+  --code-purple: #c74ded;
+  --code-blue: #7cb7ff;
+  --code-red: #ee5d43;
+  --code-green: #96e072;
+
+  --code-line-number: #746f77;
+  --code-line-highlight: #2e323d;
+  --code-indent: #333844;
+
+  /* Workspace / Editor Chrome*/
+
+  --workspace-bg: #080c12;
+  --workspace-border: #1b2430;
+  --workspace-divider: #26303c;
+  --workspace-faint: #56616f;
+
+  --workspace-window-red: #ef4444;
+  --workspace-window-yellow: #eab308;
+  --workspace-window-green: #22c55e;
+
+  --workspace-git: #a855f7;
+
+  --workspace-status-bg: #08221d;
+  --workspace-status-border: #135d50;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
 }
 
 * {
@@ -25,18 +83,32 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   margin: 0;
   background: var(--background);
   color: var(--text-primary);
-}
-/* Hide native scrollbar */
-html {
-  scrollbar-width: none;
+  font-family: var(--font-inter), sans-serif;
 }
 
-html::-webkit-scrollbar {
-  display: none;
+.page-grid {
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+
+  background-size: 56px 56px;
+}
+
+.ambient-glow {
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(56, 189, 248, 0.08),
+    transparent 55%
+  );
 }
