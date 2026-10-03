@@ -67,7 +67,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="flex justify-between border-t border-[var(--border-subtle)] pt-5">
             <p className="font-mono text-[10px] uppercase tracking-wide text-[var(--text-muted)]">
-              © 2026 Minhazul Islam Rikat
+             © {new Date().getFullYear()} Minhazul Islam Rikat
             </p>
           </div>
         </div>
