@@ -121,13 +121,18 @@ export default function WorkspaceBar() {
           </div>
 
           {/* Availability */}
-          <div className="hidden items-center gap-2 rounded-full border border-[var(--workspace-status-border)] bg-[var(--workspace-status-bg)] px-3 py-1 text-[10px] text-[var(--workspace-status-text)] md:flex">
-            <span className="h-[6px] w-[6px] rounded-full bg-[var(--workspace-status-text)]" />
+          {/* Availability */}
+{/* Availability */}
+<div className="hidden items-center gap-2 rounded-full border border-[var(--workspace-status-border)] bg-[var(--workspace-status-bg)] px-3 py-1 text-[10px] text-[var(--tertiary)] md:flex">
+  <span className="relative flex h-[7px] w-[7px] shrink-0">
+    <span className="absolute inset-0 animate-ping rounded-full bg-[var(--tertiary)] opacity-60" />
+    <span className="relative block h-[7px] w-[7px] rounded-full bg-[var(--tertiary)]" />
+  </span>
 
-            <span>
-              Available for new projects
-            </span>
-          </div>
+  <span>
+    Available for new projects
+  </span>
+</div>
         </div>
       </div>
     </div>

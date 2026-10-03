@@ -104,7 +104,7 @@ useEffect(() => {
               >
                 {/* // */}
                 <span className="text-[var(--primary)]">
-                  //
+                  &#47;&#47;
                 </span>
 
                 {/* Number */}
@@ -139,7 +139,7 @@ useEffect(() => {
           className="ml-7 hidden items-center rounded-[7px] border border-[var(--primary)]/40 bg-[var(--primary)]/[0.06] px-4 py-2.5 font-mono text-[11px] font-medium text-[var(--primary)] transition-all duration-200 hover:border-[var(--primary)] hover:bg-[var(--primary)]/[0.1] lg:flex"
         >
           <span className="mr-1.5">&gt;_</span>
-          Let's Talk
+          Let&apos;s Talk
         </a>
 
         {/* Mobile Menu Button */}
@@ -177,7 +177,7 @@ useEffect(() => {
                   }`}
                 >
                   <span className="text-[var(--primary)]">
-                    //
+                    &#47;&#47;
                   </span>
 
                   <span>{link.number}.</span>
@@ -193,7 +193,7 @@ useEffect(() => {
               className="mt-4 inline-flex items-center rounded-[7px] border border-[var(--primary)]/40 bg-[var(--primary)]/[0.06] px-4 py-2.5 font-mono text-[11px] font-medium text-[var(--primary)] transition-all duration-200 hover:border-[var(--primary)] hover:bg-[var(--primary)]/[0.1]"
             >
               <span className="mr-1.5">&gt;_</span>
-              Let's Talk
+              Let&apos;s Talk
             </a>
           </div>
         </div>

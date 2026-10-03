@@ -17,13 +17,22 @@ function useTypewriter(
   words,
   { typeSpeed = 65, deleteSpeed = 35, pause = 1400 } = {},
 ) {
-  const [text, setText] = useState("");
+ const [text, setText] = useState(() => {
+  if (
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    return words[0];
+  }
+
+  return "";
+});
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     if (mq.matches) {
-      setText(words[0]);
+      
       return;
     }
 
@@ -120,7 +129,7 @@ export default function Hero() {
             <span className="text-[var(--text-muted)]">=</span>
 
             <span className="ml-1.5 text-[var(--code-yellow)]">
-              "Frontend & CMS Developer"
+              &quot;Frontend & CMS Developer&quot;
             </span>
 
             <span className="ml-1 text-[var(--text-muted)]">;</span>

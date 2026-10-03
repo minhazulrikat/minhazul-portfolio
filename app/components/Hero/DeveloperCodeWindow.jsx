@@ -162,7 +162,7 @@ export default function DeveloperCodeWindow() {
           <CodeLine number="08" indent>
             <Property>focus:</Property>{" "}
             <String>
-              "Modern web experiences"
+              &quot;Modern web experiences&quot;
             </String>
             ,
           </CodeLine>
@@ -174,13 +174,13 @@ export default function DeveloperCodeWindow() {
 
           {/* Line 10 */}
           <CodeLine number="10" doubleIndent>
-            <String>"React"</String>,{" "}
-            <String>"Next.js"</String>,
+            <String>&quot;React&quot;</String>,{" "}
+            <String>&quot;Next.js&quot;</String>,
           </CodeLine>
 
           {/* Line 11 */}
           <CodeLine number="11" doubleIndent>
-            <String>"Tailwind CSS"</String>,
+            <String>&quot;Tailwind CSS&quot;</String>,
           </CodeLine>
 
           {/* Line 12 */}
@@ -195,17 +195,17 @@ export default function DeveloperCodeWindow() {
 
           {/* Line 14 */}
           <CodeLine number="14" doubleIndent>
-            <String>"responsive"</String>,
+            <String>&quot;responsive&quot;</String>,
           </CodeLine>
 
           {/* Line 15 */}
           <CodeLine number="15" doubleIndent>
-            <String>"accessible"</String>,
+            <String>&quot;accessible&quot;</String>,
           </CodeLine>
 
           {/* Line 16 */}
           <CodeLine number="16" doubleIndent>
-            <String>"scalable"</String>,
+            <String>&quot;scalable&quot;</String>,
           </CodeLine>
 
           {/* Line 17 */}
@@ -226,7 +226,7 @@ export default function DeveloperCodeWindow() {
           {/* Line 20 */}
           <CodeLine number="20">
             <Comment>
-              // turning ideas into interfaces
+              &#47;&#47; turning ideas into interfaces
             </Comment>
           </CodeLine>
 
