@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar/Navbar";
 import WorkspaceBar from "./components/Navbar/WorkspaceBar";
 import Process from "./components/Process";
 import ScrollProgress from "./components/ScrollProgress";
-import SelectedWork from "./components/SelectedWork";
+import SelectedWork from "./components/work/SelectedWork";
 import Skills from "./components/Skills";
 import SmoothScroll from "./components/SmoothScroll";
 

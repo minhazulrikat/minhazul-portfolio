@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
+import ScrambleName from "./ScrambleName";
 import { fadeUp, staggerContainer } from "../animations";
 import DeveloperCodeWindow from "./DeveloperCodeWindow";
 
@@ -17,22 +17,21 @@ function useTypewriter(
   words,
   { typeSpeed = 65, deleteSpeed = 35, pause = 1400 } = {},
 ) {
- const [text, setText] = useState(() => {
-  if (
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  ) {
-    return words[0];
-  }
+  const [text, setText] = useState(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return words[0];
+    }
 
-  return "";
-});
+    return "";
+  });
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     if (mq.matches) {
-      
       return;
     }
 
@@ -140,9 +139,7 @@ export default function Hero() {
             variants={fadeUp}
             className="font-mono text-[clamp(2.7rem,6vw,5.5rem)] font-semibold leading-[0.92] tracking-[-0.055em]"
           >
-            <span className="block text-[var(--text-primary)]">MINHAZUL</span>
-
-            <span className="block text-[var(--primary)]">ISLAM RIKAT</span>
+            <ScrambleName />
           </motion.h1>
 
           {/* Description */}
@@ -150,7 +147,12 @@ export default function Hero() {
             variants={fadeUp}
             className="mt-8 max-w-[620px] text-base leading-7 text-[var(--text-secondary)] sm:text-lg sm:leading-8"
           >
-            I turn ideas and designs into modern, responsive web experiences—built with clean code, thoughtful interactions, and scalable frontend architecture.
+            I turn ideas and designs into modern, responsive web
+            experiences—built with{" "}
+            <span className="rounded-[3px] border border-[var(--secondary)]/30 bg-[var(--primary)]/[0.06] px-1.5 py-0.5 font-mono text-[0.9em] text-[var(--secondary)]">
+              clean code
+            </span>
+            , thoughtful interactions, and scalable frontend architecture .
           </motion.p>
 
           {/* Typewriter */}
@@ -160,7 +162,7 @@ export default function Hero() {
           >
             <span className="text-[var(--primary)]">&gt;</span>
 
-            <span className="ml-2 uppercase tracking-wider text-[var(--accent)]">
+            <span className="ml-2 uppercase tracking-wider text-[var(--code-green)]">
               {typedRole}
             </span>
 
@@ -168,35 +170,28 @@ export default function Hero() {
           </motion.div>
 
           {/* Divider / technical metadata */}
-         <motion.div
-  variants={fadeUp}
-  className="mt-7 flex max-w-[700px] flex-wrap items-center gap-x-4 gap-y-2 border-y border-[var(--border-subtle)] py-3 font-mono text-[11px] leading-5 text-[var(--text-secondary)] sm:text-xs"
->
-  <span>
-    <span className="text-[var(--primary)]">
-      #
-    </span>{" "}
-    1+ Years Exp
-  </span>
+          <motion.div
+            variants={fadeUp}
+            className="mt-7 flex max-w-[700px] flex-wrap items-center gap-x-4 gap-y-2 border-y border-[var(--border-subtle)] py-3 font-mono text-[11px] leading-5 text-[var(--text-secondary)] sm:text-xs"
+          >
+            <span>
+              <span className="text-[var(--primary)]">#</span> 1+ Years Exp
+            </span>
 
-  <span className="hidden h-3 w-px bg-[var(--border)] sm:block" />
+            <span className="hidden h-3 w-px bg-[var(--border)] sm:block" />
 
-  <span>
-    <span className="text-[var(--primary)]">
-      #
-    </span>{" "}
-    React, Next.js, Tailwind CSS
-  </span>
+            <span>
+              <span className="text-[var(--primary)]">#</span> React, Next.js,
+              Tailwind CSS
+            </span>
 
-  <span className="hidden h-3 w-px bg-[var(--border)] sm:block" />
+            <span className="hidden h-3 w-px bg-[var(--border)] sm:block" />
 
-  <span>
-    <span className="text-[var(--primary)]">
-      #
-    </span>{" "}
-    Bangladesh · Remote Ready
-  </span>
-</motion.div>
+            <span>
+              <span className="text-[var(--primary)]">#</span> Bangladesh ·
+              Remote Ready
+            </span>
+          </motion.div>
 
           {/* CTA */}
           <motion.div
