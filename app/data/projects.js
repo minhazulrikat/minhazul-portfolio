@@ -8,7 +8,9 @@ const projects = [
     image: "/projects/keenkeeper-preview.png",
     liveUrl: "https://keen-keeper-beige.vercel.app/",
     githubUrl: "https://github.com/minhazulrikat/keen-keeper.git",
+    accent: "primary",
   },
+
   {
     id: 2,
     title: "Book Vibe",
@@ -18,7 +20,9 @@ const projects = [
     image: "/projects/book-vibe.png",
     liveUrl: "https://books-vibe-eight.vercel.app/",
     githubUrl: "https://github.com/minhazulrikat/books-vibe.git",
+    accent: "tertiary",
   },
+
   {
     id: 3,
     title: "DigiTools",
@@ -28,6 +32,7 @@ const projects = [
     image: "/projects/digi-tools.png",
     liveUrl: "https://digi-tools-vert.vercel.app/",
     githubUrl: "https://github.com/minhazulrikat/DigiTools.git",
+    accent: "secondary",
   },
 ];
 

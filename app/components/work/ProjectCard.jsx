@@ -8,26 +8,29 @@ export default function ProjectCard({
   project,
   reverse = false,
 }) {
+  const accentStyle = {
+    "--project-accent": `var(--${project.accent})`,
+  };
+
   return (
     <article
-      className="relative overflow-hidden rounded-[8px] border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5 lg:p-10"
+      style={accentStyle}
+      className="group relative overflow-hidden rounded-[8px] border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors duration-300 hover:border-[var(--project-accent)] sm:p-5 lg:p-10"
     >
       <div
         className={`flex flex-col gap-8 lg:items-center lg:gap-10 ${
-          reverse
-            ? "lg:flex-row-reverse"
-            : "lg:flex-row"
+          reverse ? "lg:flex-row-reverse" : "lg:flex-row"
         }`}
       >
         {/* Project Preview */}
-        <div className="w-full min-w-0 lg:w-[54%]">
+        <div className="w-full min-w-0 rounded-[6px] border border-[var(--border)] transition-colors duration-300 group-hover:border-[var(--project-accent)] lg:w-[54%]">
           <ProjectPreview project={project} />
         </div>
 
         {/* Project Information */}
         <div className="flex min-w-0 flex-1 flex-col lg:px-1">
           {/* Project Number */}
-          <p className="font-mono text-[11px] tracking-wide text-[var(--primary)]">
+          <p className="font-mono text-[11px] tracking-wide text-[var(--project-accent)]">
             PROJECT #{String(project.id).padStart(2, "0")}
           </p>
 
@@ -46,7 +49,7 @@ export default function ProjectCard({
             {project.technologies.map((technology) => (
               <span
                 key={technology}
-                className="rounded-[3px] border border-[var(--border)] bg-[var(--background)] px-2 py-1 font-mono text-[10px] leading-4 text-[var(--primary)] sm:text-[11px]"
+                className="rounded-[3px] border border-[var(--border)] bg-[var(--background)] px-2 py-1 font-mono text-[10px] leading-4 text-[var(--project-accent)] transition-colors duration-200 sm:text-[11px]"
               >
                 {technology}
               </span>
@@ -61,7 +64,7 @@ export default function ProjectCard({
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/link inline-flex items-center gap-1.5 text-[var(--primary)] transition-colors duration-200 hover:text-[var(--primary-hover)]"
+                  className="group/link inline-flex items-center gap-1.5 text-[var(--project-accent)] transition-colors duration-200 hover:opacity-80"
                 >
                   <span>Live Website</span>
 
@@ -87,7 +90,7 @@ export default function ProjectCard({
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/link inline-flex items-center gap-1.5 text-[var(--text-secondary)] transition-colors duration-200 hover:text-[var(--text-primary)]"
+                  className="group/link inline-flex items-center gap-1.5 text-[var(--text-secondary)] transition-colors duration-200 hover:text-[var(--project-accent)]"
                 >
                   <FaGithub
                     aria-hidden="true"

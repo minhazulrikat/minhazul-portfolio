@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ProjectPreview({ project }) {
   return (
-    <div className="group relative w-full overflow-hidden rounded-[6px] border border-[var(--border)] bg-[var(--background)] ">
+    <div className="group relative w-full overflow-hidden rounded-[6px] ">
       {/* Browser Header */}
       <div className="flex h-9 items-center border-b border-[var(--border-subtle)] bg-[var(--background)] px-3 sm:h-10 sm:px-4">
         {/* Traffic Lights */}

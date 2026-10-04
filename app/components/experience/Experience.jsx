@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { experiences } from "../data/experiences";
-import "../globals.css";
+import { experiences } from "../../data/experiences";
+import "../../globals.css";
 /**
  * Fires `true` once when the element enters the viewport, then stops observing.
  * Returns `true` immediately (no animation) if the user prefers reduced motion.
