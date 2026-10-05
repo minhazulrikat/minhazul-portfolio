@@ -56,32 +56,34 @@ export default function ExperienceTimeline() {
 
   const lineDuration = 0.6 + experiences.length * 0.45;
 
+  const timelineGradient =
+    "linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 50%, var(--tertiary) 100%)";
+
   return (
-    <div ref={timelineRef} className="relative mt-16 pl-8 md:mt-20 md:pl-16">
+    <div
+      ref={timelineRef}
+      className="relative mt-16 pl-8 md:mt-20 md:pl-16"
+    >
       {/* Base timeline line */}
       <div
         aria-hidden="true"
-        className="absolute bottom-2 left-0 top-2 w-px opacity-30"
+        className="absolute bottom-0 left-0 top-0 w-px opacity-30"
         style={{
-          background:
-            "linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 50%, var(--tertiary) 100%)",
+          background: timelineGradient,
         }}
       />
 
       {/* Animated timeline line */}
       <div
-       aria-hidden="true"
-  className="absolute bottom-2 left-0 top-2 w-px origin-top opacity-70"
-  style={{
-    background:
-      "linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 50%, var(--tertiary) 100%)",
-    transform: inView
-      ? "scaleY(1)"
-      : "scaleY(0)",
-    transition: reducedMotion
-      ? "none"
-      : `transform ${lineDuration}s cubic-bezier(0.25, 0.1, 0.25, 1)`,
-  }}
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 top-0 w-px origin-top opacity-70"
+        style={{
+          background: timelineGradient,
+          transform: inView ? "scaleY(1)" : "scaleY(0)",
+          transition: reducedMotion
+            ? "none"
+            : `transform ${lineDuration}s cubic-bezier(0.25, 0.1, 0.25, 1)`,
+        }}
       />
 
       <ol className="m-0 list-none space-y-10 p-0 sm:space-y-12 lg:space-y-14">
@@ -89,12 +91,21 @@ export default function ExperienceTimeline() {
           const accentStyle = {
             "--experience-accent": `var(--${experience.accent})`,
           };
-          const dotDelay = reducedMotion ? 0 : 0.3 + index * 0.45;
 
-          const cardDelay = reducedMotion ? 0 : dotDelay + 0.15;
+          const dotDelay = reducedMotion
+            ? 0
+            : 0.3 + index * 0.45;
+
+          const cardDelay = reducedMotion
+            ? 0
+            : dotDelay + 0.15;
 
           return (
-            <li key={experience.id} className="relative" style={accentStyle}>
+            <li
+              key={experience.id}
+              className="relative"
+              style={accentStyle}
+            >
               {/* Timeline dot */}
               <TimelineDot
                 accent={experience.accent}
