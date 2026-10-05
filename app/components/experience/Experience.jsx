@@ -6,7 +6,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative overflow-hidden border-b border-[var(--border-subtle)] bg-[#0B1018] scroll-mt-24"
+      className="relative overflow-hidden border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)] scroll-mt-24"
     >
       {/* Subtle technical grid */}
       <div

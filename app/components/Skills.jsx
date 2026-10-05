@@ -35,7 +35,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative overflow-hidden border-y border-[var(--border-subtle)] bg-[var(--background)] scroll-mt-24"
+      className="relative overflow-hidden border-y border-[var(--border-subtle)] bg-[var(--bg-secondary)] scroll-mt-24"
     >
       {/* Subtle technical grid */}
       <div
