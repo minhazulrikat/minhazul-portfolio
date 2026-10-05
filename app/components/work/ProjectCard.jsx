@@ -15,7 +15,7 @@ export default function ProjectCard({
   return (
     <article
       style={accentStyle}
-      className="group relative overflow-hidden rounded-[8px] border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors duration-300 hover:border-[var(--project-accent)] sm:p-5 lg:p-10"
+      className="group relative overflow-hidden rounded-[8px] border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors duration-300 hover:border-[var(--project-accent)]/60 sm:p-5 lg:p-10"
     >
       <div
         className={`flex flex-col gap-8 lg:items-center lg:gap-10 ${
@@ -23,7 +23,7 @@ export default function ProjectCard({
         }`}
       >
         {/* Project Preview */}
-        <div className="w-full min-w-0 rounded-[6px] border border-[var(--border)] transition-colors duration-300 group-hover:border-[var(--project-accent)] lg:w-[54%]">
+        <div className="w-full min-w-0 rounded-[6px] border border-[var(--border)] transition-colors duration-300 group-hover:border-[var(--project-accent)]/60 lg:w-[54%]">
           <ProjectPreview project={project} />
         </div>
 

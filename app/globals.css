@@ -112,3 +112,27 @@ body {
     transparent 55%
   );
 }
+
+
+@keyframes timeline-dot-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.35;
+  }
+
+  60% {
+    opacity: 0.05;
+  }
+
+  80% {
+    opacity: 0.55;
+  }
+}
+
+.timeline-active-dot {
+  animation: timeline-dot-pulse 1s ease-in-out infinite;
+}
